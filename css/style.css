@@ -19,7 +19,7 @@ body {
     color: #777;
     padding: 30px;
 }
-
+/* header picture styling */
 .header {
     height: 95vh;
     background-image: linear-gradient(
@@ -33,7 +33,7 @@ body {
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); 
 }
-
+/* logo adding and positioning */
 .logo-box{
     position: absolute;
     top:40px;
@@ -42,7 +42,7 @@ body {
 .logo{
     height: 35px;
 }
-
+/* heading text styling and positioning */
 .text-box{
     position: absolute;
     top:40%;
@@ -52,16 +52,56 @@ body {
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
+    /* to stop shaking the whole heading after animation */
+    backface-visibility: hidden;
 }
 .heading-primary-main{
     display: block;
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    /* adding animation class */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*
+    animation-delay: 3s;
+    animation-iteration-count: 3;
+    animation-timing-fuction: ease;(check MDN)
+    */
 }
 .heading-primary-sub{
     display: block;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+    /* adding animation class */
+    animation: moveInRight 1s ease-out;
+}
+/* animation to heading text */
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
 }
