@@ -1,7 +1,7 @@
 
 .row {
     max-width: $gird-width;
-    background-color: #eee;
+    // background-color: #eee;
     margin: 0 auto;
 
     &:not(:last-child) {
@@ -15,9 +15,8 @@
     //[* = contains]
 
     [class^= "col-"] {
-        background-color: orangered;
+        // background-color: orangered;
         float: left;
-        color: white;
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
         }
